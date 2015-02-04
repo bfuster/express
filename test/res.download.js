@@ -43,7 +43,10 @@ describe('res', function(){
       var cb = after(2, done);
 
       app.use(function(req, res){
-        res.download('test/fixtures/user.html', cb);
+        res.download('test/fixtures/user.html', function(err){
+          console.dir(err);
+          cb();
+        });
       });
 
       request(app)
