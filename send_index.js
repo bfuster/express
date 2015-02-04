@@ -648,7 +648,7 @@ SendStream.prototype.stream = function(path, options){
   var self = this;
   var res = this.res;
   var req = this.req;
-
+console.dir('patched send');
   // stream
   var stream = fs.createReadStream(path, options);
   this.emit('stream', stream);
