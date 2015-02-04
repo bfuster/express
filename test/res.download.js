@@ -45,7 +45,7 @@ describe('res', function(){
       app.use(function(req, res){
         res.download('test/fixtures/user.html', function(err){
           console.trace(err);
-          setTimeout(cb, 5000);
+          setTimeout(cb, 1900);
         });
       });
 
