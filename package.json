@@ -83,7 +83,7 @@
   ],
   "scripts": {
     "test": "mocha --require test/support/env --reporter spec --bail --check-leaks test/ test/acceptance/",
-    "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly --no-exit -- --require test/support/env --reporter dot --check-leaks test/res.*",
+    "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly --no-exit -- --require test/support/env --reporter dot --check-leaks test/app.js test/config.js test/exports.js test/middleware.basic.js",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/ test/acceptance/",
     "test-tap": "mocha --require test/support/env --reporter tap --check-leaks test/ test/acceptance/"
   }
