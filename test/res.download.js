@@ -44,7 +44,7 @@ describe('res', function(){
 
       app.use(function(req, res){
         res.download('test/fixtures/user.html', function(err){
-          console.dir(err);
+          console.trace(err);
           cb();
         });
       });
