@@ -5,7 +5,7 @@ var express = require('..');
 var request = require('supertest');
 
 describe('res', function(){
-  describe.skip('.download(path)', function(){
+  describe('.download(path)', function(){
     it('should transfer as an attachment', function(done){
       var app = express();
 
@@ -21,7 +21,7 @@ describe('res', function(){
     })
   })
 
-  describe.skip('.download(path, filename)', function(){
+  describe('.download(path, filename)', function(){
     it('should provide an alternate filename', function(done){
       var app = express();
 
@@ -43,10 +43,7 @@ describe('res', function(){
       var cb = after(2, done);
 
       app.use(function(req, res){
-        res.download('test/fixtures/user.html', function(err){
-          console.error(new Error().stack);
-          setTimeout(cb, 1900);
-        });
+        res.download('test/fixtures/user.html', cb);
       });
 
       request(app)
@@ -57,7 +54,7 @@ describe('res', function(){
     })
   })
 
-  describe.skip('.download(path, filename, fn)', function(){
+  describe('.download(path, filename, fn)', function(){
     it('should invoke the callback', function(done){
       var app = express();
       var cb = after(2, done);
@@ -74,7 +71,7 @@ describe('res', function(){
     })
   })
 
-  describe.skip('on failure', function(){
+  describe('on failure', function(){
     it('should invoke the callback', function(done){
       var app = express();
 
