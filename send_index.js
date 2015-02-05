@@ -677,7 +677,9 @@ console.dir('patched send');
   // response finished, done with the fd
   onFinished(res, function onfinished(){
     finished = true;
-    destroy(stream);
+    process.nextTick(function (){
+      destroy(stream);
+    });
   });
 };
 
