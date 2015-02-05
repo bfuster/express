@@ -553,7 +553,7 @@ SendStream.prototype.send = function(path, stat){
   }
 
   // content-length
-  //res.setHeader('Content-Length', len);
+  res.setHeader('Content-Length', len);
 
   // HEAD support
   if ('HEAD' == req.method) return res.end();
