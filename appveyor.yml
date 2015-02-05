@@ -14,6 +14,5 @@ build: off
 test_script:
   - node --version
   - npm --version
-  - set NODE_DEBUG=http,net,fs
   - npm run test-ci
 version: "{build}"
